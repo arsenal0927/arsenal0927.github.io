@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>My New Hugo Site</title>
+    <link>https://arsenal0927.github.io/</link>
+    <description>Recent content on My New Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 13 Apr 2020 17:06:12 +0800</lastBuildDate>
+    
+	<atom:link href="https://arsenal0927.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Aboutme</title>
+      <link>https://arsenal0927.github.io/files/aboutme/</link>
+      <pubDate>Mon, 13 Apr 2020 17:06:12 +0800</pubDate>
+      
+      <guid>https://arsenal0927.github.io/files/aboutme/</guid>
+      <description>使用hugo搭建的博客，托管在GitHub。
+参照的视频为：手把手教你从0开始搭建自己的个人博客
+以及文章：使用Hugo搭建自己的个人博客网站
+使用的主题为：hugo-theme-m10c，使用官方给出的命令就可以安装，无繁琐配置需求。
+参考资料 官网：https://gohugo.io/
+文档：https://gohugo.io/documentation/</description>
+    </item>
+    
+  </channel>
+</rss>
