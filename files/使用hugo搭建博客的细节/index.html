@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <title>使用Hugo搭建博客的细节 // Arsenal&#39;s Blog</title>
+    <link rel="icon" href="/Users/arsenal3/github/blog/quickstart/themes/m10c/static/react.png" type="image/x-icon">  
+    <link rel="shortcut icon" href="/Users/arsenal3/github/blog/quickstart/themes/m10c/static/react.png" type="image/x-icon">  
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.55.6" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="arsenal0927" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="https://arsenal0927.github.io/css/main.min.61bb32028587f24ca28522d8d197970c7ef33284e5fffb45a75fcbbb2dbc4dcb.css" />
+
+    
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="使用Hugo搭建博客的细节"/>
+<meta name="twitter:description" content="使用Hugo完成博客的搭建以及发布  记性不太好，经常会忘记博客创建、更新、发布等命令，干脆就写下来免得自己又忘记了
+ 环境
+工具：macbookpro 2017、iTerm2 开发环境：python3.7  1.安装 brew install hugo
+2.创建博客 hugo new site (myblognme) # 例如：hugo new site myblog  3.下载并设置主题 以hugo-theme-m10c为例
+cd myblog //进入博客根目录 git clone https://github.com/vaga/hugo-theme-m10c.git themes/m10c  修改config.toml配置文件
+theme = &quot;m10c&quot;  4.本地启动个人博客 hugo server -t m10c --buildDrafts  可从http://localhost:1313/访问本地博客
+5.创建一篇新的博客 hugo new [path/filename] # 例如：hugo new files/first-blog.md  命令执行后会在myblog/content路径下创建一个files 文件夹，创建的blog文件就保存在其中。
+6.将个人博客部署到远程服务器  在GitHub创建仓库，创建的项目名字一定是昵称的小写，比如昵称为：arsenal0927，那么项目名称就为：arsenal0927。
+ 发布博客
+hugo --theme=m10c --baseUrl=&quot;https://arsenal0927.github.io/&quot; --buildDrafts  baseUrl是博客的地址，而arsnel0927就是创建的项目名。执行后根目录下回多出一个public文件夹，编译好的博客的内容就在里面。"/>
+
+    <meta property="og:title" content="使用Hugo搭建博客的细节" />
+<meta property="og:description" content="使用Hugo完成博客的搭建以及发布  记性不太好，经常会忘记博客创建、更新、发布等命令，干脆就写下来免得自己又忘记了
+ 环境
+工具：macbookpro 2017、iTerm2 开发环境：python3.7  1.安装 brew install hugo
+2.创建博客 hugo new site (myblognme) # 例如：hugo new site myblog  3.下载并设置主题 以hugo-theme-m10c为例
+cd myblog //进入博客根目录 git clone https://github.com/vaga/hugo-theme-m10c.git themes/m10c  修改config.toml配置文件
+theme = &quot;m10c&quot;  4.本地启动个人博客 hugo server -t m10c --buildDrafts  可从http://localhost:1313/访问本地博客
+5.创建一篇新的博客 hugo new [path/filename] # 例如：hugo new files/first-blog.md  命令执行后会在myblog/content路径下创建一个files 文件夹，创建的blog文件就保存在其中。
+6.将个人博客部署到远程服务器  在GitHub创建仓库，创建的项目名字一定是昵称的小写，比如昵称为：arsenal0927，那么项目名称就为：arsenal0927。
+ 发布博客
+hugo --theme=m10c --baseUrl=&quot;https://arsenal0927.github.io/&quot; --buildDrafts  baseUrl是博客的地址，而arsnel0927就是创建的项目名。执行后根目录下回多出一个public文件夹，编译好的博客的内容就在里面。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://arsenal0927.github.io/files/%E4%BD%BF%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%9A%84%E7%BB%86%E8%8A%82/" />
+<meta property="article:published_time" content="2020-04-15T09:57:56&#43;08:00"/>
+<meta property="article:modified_time" content="2020-04-15T09:57:56&#43;08:00"/>
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https://arsenal0927.github.io/"><img class="app-header-avatar" src="/title.jpg" alt="arsenal0927" /></a>
+      <h1>Arsenal&#39;s Blog</h1>
+      <p>伪·技术宅、伪·动漫迷、伪·文艺青年，目前在折腾edx、blockly、以micropython为基础的嵌入式、物联网。</p>
+      <div class="app-header-social">
+        
+          <a target="_blank" href="https://github.com/arsenal0927" rel="noreferrer noopener"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-github">
+  <title>github</title>
+  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+</svg></a>
+        
+          <a target="_blank" href="https://blog.just4fun.site/" rel="noreferrer noopener"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-link">
+  <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+  <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg></a>
+        
+      </div>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">使用Hugo搭建博客的细节</h1>
+      <div class="post-meta">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Apr 15, 2020
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          1 min read
+        </div></div>
+    </header>
+    <div class="post-content">
+      
+
+<h1 id="使用hugo完成博客的搭建以及发布">使用Hugo完成博客的搭建以及发布</h1>
+
+<hr />
+
+<blockquote>
+<p>记性不太好，经常会忘记博客创建、更新、发布等命令，干脆就写下来免得自己又忘记了</p>
+</blockquote>
+
+<p><strong>环境</strong></p>
+
+<pre><code>工具：macbookpro 2017、iTerm2
+开发环境：python3.7
+</code></pre>
+
+<h2 id="1-安装">1.安装</h2>
+
+<p><code>brew install hugo</code></p>
+
+<h2 id="2-创建博客">2.创建博客</h2>
+
+<pre><code>hugo new site (myblognme) # 例如：hugo new site myblog
+</code></pre>
+
+<h2 id="3-下载并设置主题">3.下载并设置主题</h2>
+
+<p>以<strong>hugo-theme-m10c</strong>为例</p>
+
+<pre><code>cd myblog //进入博客根目录
+git clone https://github.com/vaga/hugo-theme-m10c.git themes/m10c
+</code></pre>
+
+<p>修改<strong>config.toml</strong>配置文件</p>
+
+<pre><code>theme = &quot;m10c&quot;
+</code></pre>
+
+<h2 id="4-本地启动个人博客">4.本地启动个人博客</h2>
+
+<pre><code>hugo server -t m10c --buildDrafts
+</code></pre>
+
+<p>可从<strong><a href="http://localhost:1313/">http://localhost:1313/</a></strong>访问本地博客</p>
+
+<h2 id="5-创建一篇新的博客">5.创建一篇新的博客</h2>
+
+<pre><code>hugo new [path/filename] # 例如：hugo new files/first-blog.md
+</code></pre>
+
+<p>命令执行后会在<strong>myblog/content</strong>路径下创建一个<strong>files</strong> 文件夹，创建的blog文件就保存在其中。</p>
+
+<h2 id="6-将个人博客部署到远程服务器">6.将个人博客部署到远程服务器</h2>
+
+<ol>
+<li><p>在GitHub创建仓库，<strong>创建的项目名字一定是昵称的小写，比如昵称为：arsenal0927，那么项目名称就为：arsenal0927</strong>。</p></li>
+
+<li><p>发布博客</p>
+
+<pre><code>hugo --theme=m10c --baseUrl=&quot;https://arsenal0927.github.io/&quot; --buildDrafts
+</code></pre>
+
+<p><strong>baseUrl</strong>是博客的地址，而<strong>arsnel0927</strong>就是创建的项目名。执行后根目录下回多出一个<strong>public</strong>文件夹，编译好的博客的内容就在里面。</p>
+
+<pre><code>cd public # 进入发布的目录
+git init # 初始化git仓库
+git add . # 将所有修改添加
+git commit -m &quot;第一次提交&quot; # 添加提交的信息说明
+git remote add origin https://github.com/arsenal0927/arsenal0927.github.io.git # 与新建的博客仓库关联
+git push -u origin master # 将提交的代码上传到git仓库中
+</code></pre></li>
+</ol>
+
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>

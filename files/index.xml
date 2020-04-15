@@ -6,10 +6,28 @@
     <description>Recent content in Files on Arsenal&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 13 Apr 2020 17:06:12 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 15 Apr 2020 09:57:56 +0800</lastBuildDate>
     
 	<atom:link href="https://arsenal0927.github.io/files/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>使用Hugo搭建博客的细节</title>
+      <link>https://arsenal0927.github.io/files/%E4%BD%BF%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%9A%84%E7%BB%86%E8%8A%82/</link>
+      <pubDate>Wed, 15 Apr 2020 09:57:56 +0800</pubDate>
+      
+      <guid>https://arsenal0927.github.io/files/%E4%BD%BF%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%9A%84%E7%BB%86%E8%8A%82/</guid>
+      <description>使用Hugo完成博客的搭建以及发布  记性不太好，经常会忘记博客创建、更新、发布等命令，干脆就写下来免得自己又忘记了
+ 环境
+工具：macbookpro 2017、iTerm2 开发环境：python3.7  1.安装 brew install hugo
+2.创建博客 hugo new site (myblognme) # 例如：hugo new site myblog  3.下载并设置主题 以hugo-theme-m10c为例
+cd myblog //进入博客根目录 git clone https://github.com/vaga/hugo-theme-m10c.git themes/m10c  修改config.toml配置文件
+theme = &amp;quot;m10c&amp;quot;  4.本地启动个人博客 hugo server -t m10c --buildDrafts  可从http://localhost:1313/访问本地博客
+5.创建一篇新的博客 hugo new [path/filename] # 例如：hugo new files/first-blog.md  命令执行后会在myblog/content路径下创建一个files 文件夹，创建的blog文件就保存在其中。
+6.将个人博客部署到远程服务器  在GitHub创建仓库，创建的项目名字一定是昵称的小写，比如昵称为：arsenal0927，那么项目名称就为：arsenal0927。
+ 发布博客
+hugo --theme=m10c --baseUrl=&amp;quot;https://arsenal0927.github.io/&amp;quot; --buildDrafts  baseUrl是博客的地址，而arsnel0927就是创建的项目名。执行后根目录下回多出一个public文件夹，编译好的博客的内容就在里面。</description>
+    </item>
     
     <item>
       <title>Aboutme</title>
