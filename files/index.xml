@@ -6,10 +6,38 @@
     <description>Recent content in Files on Arsenal&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 15 Apr 2020 09:57:56 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 17 Apr 2020 09:50:20 +0800</lastBuildDate>
     
 	<atom:link href="https://arsenal0927.github.io/files/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>树莓派的使用</title>
+      <link>https://arsenal0927.github.io/files/%E6%A0%91%E8%8E%93%E6%B4%BE%E7%9A%84%E4%BD%BF%E7%94%A8/</link>
+      <pubDate>Fri, 17 Apr 2020 09:50:20 +0800</pubDate>
+      
+      <guid>https://arsenal0927.github.io/files/%E6%A0%91%E8%8E%93%E6%B4%BE%E7%9A%84%E4%BD%BF%E7%94%A8/</guid>
+      <description>树莓派3的系统安装  本文主要介绍如何为一个新的树莓派3搭建环境，以及在开发中部分工具的配置。
+ 树莓派3的系统是装在SD卡中的，具体分为两种情况，新的sd卡和存在系统的sd卡重装系统。 在windows操作系统下进行操作，使用的工具是*Win32DiskImager*，系统的版本：*2016-05-27-raspbian-jessie*，命令行工具：cmder
+镜像烧录 新的sd卡安装
+ sd卡插入读卡器，然后插入电脑，等待电脑识别到sd卡。
+ 打开*Win32DiskImager*，选择sd卡对应的盘，载入系统镜像，点击write，等待写入成功。
+ 结束。
+  存在系统的sd卡 - 重装存在系统的sd卡需要使用 bootsector.img 将sd卡还原，
+-&amp;gt; 注意：这里直接格式化是不能将sd卡还原的。sd卡插入读卡器，然后插入电脑，等待电脑识别到sd卡。   打开*Win32DiskImager*，选择sd卡对应的盘，载入 bootsector.img，点击write，等待写入成功。
+ 退出*Win32DiskImager*，格式化sd卡，将单元大小分配为4096字节，等待格式化成功。
+ 打开*Win32DiskImager*，选择sd卡对应的盘，载入系统镜像，点击write，等待写入成功。
+ 结束。
+   注意： 系统镜像下载：https://www.raspberrypi.org/downloads/选择自己喜欢的版本就好。*bootsector.img*下载：http://www.alexpage.de/download/usbit/bootsector.img。当出现数据冗余的错误时，可以尝试将sd卡还原后，在格式化的时候将单元大小分配为4096字节尝试下。
+ 登陆系统  烧入树莓派3的系统的默认用户名密码是：pi + raspberry。
+ 使用网络连接树莓派网口，然后使用扫描IP的软件获得树莓派的IP地址。
+ 使用ssh pi@ip_address的命令进入系统。
+ 结束。
+   注意： 这里使用的扫描IP的软件是fing,只有mac和ios系统有，安卓或者其他系统使用自己喜欢的软件即可。系统镜像在2016-11-25的版本之后需要先连接屏幕登陆，在raspi-config中将ssh打开才可以使用以上方法登陆。
+ 开发环境配置 换国内源
+#sudo vi /etc/apt/sources.list 使内容变为
+deb http://mirrors.aliyun.com/raspbian/raspbian/ jessie main non-free contrib deb-src http://mirrors.</description>
+    </item>
     
     <item>
       <title>使用Hugo搭建博客的细节</title>

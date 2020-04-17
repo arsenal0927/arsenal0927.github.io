@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <title>树莓派的使用 // Arsenal&#39;s Blog</title>
+    <link rel="icon" href="/Users/arsenal3/github/blog/quickstart/themes/m10c/static/react.png" type="image/x-icon">  
+    <link rel="shortcut icon" href="/Users/arsenal3/github/blog/quickstart/themes/m10c/static/react.png" type="image/x-icon">  
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.55.6" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="arsenal0927" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="https://arsenal0927.github.io/css/main.min.61bb32028587f24ca28522d8d197970c7ef33284e5fffb45a75fcbbb2dbc4dcb.css" />
+
+    
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="树莓派的使用"/>
+<meta name="twitter:description" content="树莓派3的系统安装  本文主要介绍如何为一个新的树莓派3搭建环境，以及在开发中部分工具的配置。
+ 树莓派3的系统是装在SD卡中的，具体分为两种情况，新的sd卡和存在系统的sd卡重装系统。 在windows操作系统下进行操作，使用的工具是*Win32DiskImager*，系统的版本：*2016-05-27-raspbian-jessie*，命令行工具：cmder
+镜像烧录 新的sd卡安装
+ sd卡插入读卡器，然后插入电脑，等待电脑识别到sd卡。
+ 打开*Win32DiskImager*，选择sd卡对应的盘，载入系统镜像，点击write，等待写入成功。
+ 结束。
+  存在系统的sd卡 - 重装存在系统的sd卡需要使用 bootsector.img 将sd卡还原，
+-&gt; 注意：这里直接格式化是不能将sd卡还原的。sd卡插入读卡器，然后插入电脑，等待电脑识别到sd卡。   打开*Win32DiskImager*，选择sd卡对应的盘，载入 bootsector.img，点击write，等待写入成功。
+ 退出*Win32DiskImager*，格式化sd卡，将单元大小分配为4096字节，等待格式化成功。
+ 打开*Win32DiskImager*，选择sd卡对应的盘，载入系统镜像，点击write，等待写入成功。
+ 结束。
+   注意： 系统镜像下载：https://www.raspberrypi.org/downloads/选择自己喜欢的版本就好。*bootsector.img*下载：http://www.alexpage.de/download/usbit/bootsector.img。当出现数据冗余的错误时，可以尝试将sd卡还原后，在格式化的时候将单元大小分配为4096字节尝试下。
+ 登陆系统  烧入树莓派3的系统的默认用户名密码是：pi &#43; raspberry。
+ 使用网络连接树莓派网口，然后使用扫描IP的软件获得树莓派的IP地址。
+ 使用ssh pi@ip_address的命令进入系统。
+ 结束。
+   注意： 这里使用的扫描IP的软件是fing,只有mac和ios系统有，安卓或者其他系统使用自己喜欢的软件即可。系统镜像在2016-11-25的版本之后需要先连接屏幕登陆，在raspi-config中将ssh打开才可以使用以上方法登陆。
+ 开发环境配置 换国内源
+#sudo vi /etc/apt/sources.list 使内容变为
+deb http://mirrors.aliyun.com/raspbian/raspbian/ jessie main non-free contrib deb-src http://mirrors."/>
+
+    <meta property="og:title" content="树莓派的使用" />
+<meta property="og:description" content="树莓派3的系统安装  本文主要介绍如何为一个新的树莓派3搭建环境，以及在开发中部分工具的配置。
+ 树莓派3的系统是装在SD卡中的，具体分为两种情况，新的sd卡和存在系统的sd卡重装系统。 在windows操作系统下进行操作，使用的工具是*Win32DiskImager*，系统的版本：*2016-05-27-raspbian-jessie*，命令行工具：cmder
+镜像烧录 新的sd卡安装
+ sd卡插入读卡器，然后插入电脑，等待电脑识别到sd卡。
+ 打开*Win32DiskImager*，选择sd卡对应的盘，载入系统镜像，点击write，等待写入成功。
+ 结束。
+  存在系统的sd卡 - 重装存在系统的sd卡需要使用 bootsector.img 将sd卡还原，
+-&gt; 注意：这里直接格式化是不能将sd卡还原的。sd卡插入读卡器，然后插入电脑，等待电脑识别到sd卡。   打开*Win32DiskImager*，选择sd卡对应的盘，载入 bootsector.img，点击write，等待写入成功。
+ 退出*Win32DiskImager*，格式化sd卡，将单元大小分配为4096字节，等待格式化成功。
+ 打开*Win32DiskImager*，选择sd卡对应的盘，载入系统镜像，点击write，等待写入成功。
+ 结束。
+   注意： 系统镜像下载：https://www.raspberrypi.org/downloads/选择自己喜欢的版本就好。*bootsector.img*下载：http://www.alexpage.de/download/usbit/bootsector.img。当出现数据冗余的错误时，可以尝试将sd卡还原后，在格式化的时候将单元大小分配为4096字节尝试下。
+ 登陆系统  烧入树莓派3的系统的默认用户名密码是：pi &#43; raspberry。
+ 使用网络连接树莓派网口，然后使用扫描IP的软件获得树莓派的IP地址。
+ 使用ssh pi@ip_address的命令进入系统。
+ 结束。
+   注意： 这里使用的扫描IP的软件是fing,只有mac和ios系统有，安卓或者其他系统使用自己喜欢的软件即可。系统镜像在2016-11-25的版本之后需要先连接屏幕登陆，在raspi-config中将ssh打开才可以使用以上方法登陆。
+ 开发环境配置 换国内源
+#sudo vi /etc/apt/sources.list 使内容变为
+deb http://mirrors.aliyun.com/raspbian/raspbian/ jessie main non-free contrib deb-src http://mirrors." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://arsenal0927.github.io/files/%E6%A0%91%E8%8E%93%E6%B4%BE%E7%9A%84%E4%BD%BF%E7%94%A8/" />
+<meta property="article:published_time" content="2020-04-17T09:50:20&#43;08:00"/>
+<meta property="article:modified_time" content="2020-04-17T09:50:20&#43;08:00"/>
+
+
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="https://arsenal0927.github.io/"><img class="app-header-avatar" src="/title.jpg" alt="arsenal0927" /></a>
+      <h1>Arsenal&#39;s Blog</h1>
+      <p>伪·技术宅、伪·动漫迷、伪·文艺青年，目前在折腾edx、blockly、以micropython为基础的嵌入式、物联网。</p>
+      <div class="app-header-social">
+        
+          <a target="_blank" href="https://github.com/arsenal0927" rel="noreferrer noopener"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-github">
+  <title>github</title>
+  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+</svg></a>
+        
+          <a target="_blank" href="https://blog.just4fun.site/" rel="noreferrer noopener"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-link">
+  <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+  <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg></a>
+        
+          <a target="_blank" href="https://www.baidu.com/" rel="noreferrer noopener"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-link">
+  <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+  <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg></a>
+        
+      </div>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">树莓派的使用</h1>
+      <div class="post-meta">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <title>calendar</title>
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Apr 17, 2020
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <title>clock</title>
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          1 min read
+        </div></div>
+    </header>
+    <div class="post-content">
+      
+
+<h1 id="树莓派3的系统安装">树莓派3的系统安装</h1>
+
+<blockquote>
+<p>本文主要介绍如何为一个新的树莓派3搭建环境，以及在开发中部分工具的配置。</p>
+</blockquote>
+
+<p>树莓派3的系统是装在SD卡中的，具体分为两种情况，新的sd卡和存在系统的sd卡重装系统。
+在windows操作系统下进行操作，使用的工具是*Win32DiskImager*，系统的版本：*2016-05-27-raspbian-jessie*，命令行工具：<em>cmder</em></p>
+
+<h2 id="镜像烧录">镜像烧录</h2>
+
+<p><strong>新的sd卡安装</strong></p>
+
+<ul>
+<li><p>sd卡插入读卡器，然后插入电脑，等待电脑识别到sd卡。</p></li>
+
+<li><p>打开*Win32DiskImager*，选择sd卡对应的盘，载入系统镜像，点击write，等待写入成功。</p></li>
+
+<li><p>结束。</p></li>
+</ul>
+
+<p><strong>存在系统的sd卡</strong>
+- 重装存在系统的sd卡需要使用 <em>bootsector.img</em> 将sd卡还原，</p>
+
+<pre><code>-&gt; 注意：这里直接格式化是不能将sd卡还原的。sd卡插入读卡器，然后插入电脑，等待电脑识别到sd卡。
+</code></pre>
+
+<ul>
+<li><p>打开*Win32DiskImager*，选择sd卡对应的盘，载入 bootsector.img，点击write，等待写入成功。</p></li>
+
+<li><p>退出*Win32DiskImager*，格式化sd卡，将单元大小分配为4096字节，等待格式化成功。</p></li>
+
+<li><p>打开*Win32DiskImager*，选择sd卡对应的盘，载入系统镜像，点击write，等待写入成功。</p></li>
+
+<li><p>结束。</p></li>
+</ul>
+
+<blockquote>
+<p>注意：
+系统镜像下载：<a href="https://www.raspberrypi.org/downloads/">https://www.raspberrypi.org/downloads/</a>选择自己喜欢的版本就好。*bootsector.img*下载：<a href="http://www.alexpage.de/download/usbit/bootsector.img">http://www.alexpage.de/download/usbit/bootsector.img</a>。当出现数据冗余的错误时，可以尝试将sd卡还原后，在格式化的时候将单元大小分配为4096字节尝试下。</p>
+</blockquote>
+
+<h2 id="登陆系统">登陆系统</h2>
+
+<ul>
+<li><p>烧入树莓派3的系统的默认用户名密码是：<strong>pi + raspberry</strong>。</p></li>
+
+<li><p>使用网络连接树莓派网口，然后使用扫描IP的软件获得树莓派的IP地址。</p></li>
+
+<li><p>使用ssh pi@ip_address的命令进入系统。</p></li>
+
+<li><p>结束。</p></li>
+</ul>
+
+<blockquote>
+<p>注意：
+这里使用的扫描IP的软件是fing,只有mac和ios系统有，安卓或者其他系统使用自己喜欢的软件即可。<strong>系统镜像在2016-11-25的版本之后需要先连接屏幕登陆，在raspi-config中将ssh打开才可以使用以上方法登陆。</strong></p>
+</blockquote>
+
+<h2 id="开发环境配置">开发环境配置</h2>
+
+<p><strong>换国内源</strong></p>
+
+<p><code>#sudo vi /etc/apt/sources.list</code>
+使内容变为</p>
+
+<pre><code>deb http://mirrors.aliyun.com/raspbian/raspbian/ jessie main non-free contrib
+deb-src http://mirrors.aliyun.com/raspbian/raspbian/ jessie main non-free contrib
+</code></pre>
+
+<p><strong>修改hostname</strong></p>
+
+<p><code>sudo vim /etc/hostname</code></p>
+
+<p><strong>安装必要的软件</strong></p>
+
+<ul>
+<li><p>升级系统</p>
+
+<p><code>sudo apt-get update</code></p></li>
+
+<li><p>安装必要的软件工具</p>
+
+<p><code>sudo apt-get vim git tmux ack-grep lynx vncserver</code></p></li>
+
+<li><p>vim开发配置</p>
+
+<p><code>wget https://raw.githubusercontent.com/wwj718/wwj718-vim/master/wwj718_vim_vimrc -O ~/.vimrc</code></p></li>
+
+<li><p>结束</p></li>
+</ul>
+
+<p>到此树莓派3的系统安装步骤基本结束了，可以愉快的玩耍了。</p>
+
+<h2 id="macos下镜像烧录">MacOS下镜像烧录</h2>
+
+<p>使用软件<a href="https://www.balena.io/etcher/">balenaEtcher</a>烧录</p>
+
+    </div>
+    <div class="post-footer">
+      
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>
