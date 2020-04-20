@@ -6,10 +6,37 @@
     <description>Recent content in Files on Arsenal&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 17 Apr 2020 09:50:20 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 20 Apr 2020 17:11:05 +0800</lastBuildDate>
     
 	<atom:link href="https://arsenal0927.github.io/files/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>ubuntu16.04_4bit安装docker以及docker-compose</title>
+      <link>https://arsenal0927.github.io/files/ubuntu16.04_64bit%E5%AE%89%E8%A3%85docker%E4%BB%A5%E5%8F%8Adocker-compose/</link>
+      <pubDate>Mon, 20 Apr 2020 17:11:05 +0800</pubDate>
+      
+      <guid>https://arsenal0927.github.io/files/ubuntu16.04_64bit%E5%AE%89%E8%A3%85docker%E4%BB%A5%E5%8F%8Adocker-compose/</guid>
+      <description>ubuntu16.04_4bit安装docker以及docker-compose docker以及docker-compose在ubuntu中的安装也是基于命令行安装的。
+一、安装docker  安装教程：https://docs.docker.com/install/linux/docker-ce/ubuntu/
+ 1. 卸载旧版本的docker(如果有) sudo apt-get remove docker docker-engine docker.io containerd runc  2. 环境配置  更新apt包目录  sudo apt-get update   安装包以允许apt能够使用https上的仓库  sudo apt-get install \ apt-transport-https \ ca-certificates \ curl \ gnupg-agent \ software-properties-common   添加docker官方的GPG键  curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -  通过后八位验证键值为9DC8 5822 9FC7 DD38 854A E2D8 8D81 803C 0EBF CD88
+sudo apt-key fingerprint 0EBFCD88 # print值 pub rsa4096 2017-02-22 [SCEA] 9DC8 5822 9FC7 DD38 854A E2D8 8D81 803C 0EBF CD88 uid [ unknown] Docker Release (CE deb) &amp;lt;docker@docker.</description>
+    </item>
+    
+    <item>
+      <title>博客优化</title>
+      <link>https://arsenal0927.github.io/files/%E5%8D%9A%E5%AE%A2%E4%BC%98%E5%8C%96/</link>
+      <pubDate>Mon, 20 Apr 2020 15:07:28 +0800</pubDate>
+      
+      <guid>https://arsenal0927.github.io/files/%E5%8D%9A%E5%AE%A2%E4%BC%98%E5%8C%96/</guid>
+      <description>博客优化 怎么说呢，博客站点什么基本是弄好了，但是总体上还是比较粗糙的，下面是一些待优化的点。
+1.分类 现在文章数量还是个位数，往后多了起来也肯定不会有这个耐性一篇篇分类,所以博客分类这个功能需要尽快添加。
+大致就这几类：生活、读书、物联网、web相关。
+2.左侧简介优化 文字方面基本OK的，下方图片链接看看能不能修改成文字类型的链接，感觉会比较美观。
+3.标签图标 打开后头部小标签和书签栏中的都是一个非常丑的标签，尝试把它替换成自己喜欢的内容。
+4.媒体文件 不知道是那边出错了，添加的图片都不能正常显示。。。纯文字的博客感觉少了很多内容。
+以上是近期需要优化的内容，就这样，一篇简单用来凑数的博客就完成了=。=</description>
+    </item>
     
     <item>
       <title>树莓派的使用</title>
